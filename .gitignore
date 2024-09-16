@@ -1,0 +1,10 @@
+__pycache__
+.vscode
+.idea
+venv
+.coverage
+htmlcov
+temp
+beprint.egg-info
+build
+debug.py
