@@ -6,9 +6,11 @@
 
 **`beprint` (beautiful print)** is a simple package that can print messages in different colors and styles.
 
+**Warning:** This package is for beginners and is not suitable for advanced users.
+
 ## Installation
 
-Run the following command to install the package via pip:
+Run the following command to install the package via pip: (See <https://pypi.org/project/beprint/0.1.0/>)
 
 ```shell
 pip install beprint
@@ -25,7 +27,7 @@ pip install .
 ```python
 # Import the package
 from beprint import *
-beprint("Hello, world!")
+beprint('Hello, world!')
 ```
 
 ## Features
@@ -47,4 +49,4 @@ With:
 - **License** - The package is licensed under the MIT license.
 - **4 Languages** - The package can print messages in English, Chinese, Japanese, and Korean.
 
-> 你好！Hello! こんにちは! 안녕하세요!
+> Test language support here: 你好！Hello! こんにちは! 안녕하세요!
