@@ -36,6 +36,6 @@ beprint("Hello, world!")
 - **Columns Layout** - The package can print messages in columns using the `beprint_columns` function.
 - **Markdown Preview** - The package can preview markdown messages using the `beprint_md` function. This feature is powered by the `mistune` library.
 - **Printing Objects** - The package can print objects with colors and styles using the `beprint` function.
-- **Table** - The package can print messages in tables using the `Table` function. Base features: Add rows, columns, and pretty print.
+- **Table** - The package can print messages in tables using the `Table` class. Base features: Add rows, columns, and pretty print.
 
 You can find more information about the package in the *examples* folder.
