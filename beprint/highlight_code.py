@@ -54,6 +54,7 @@ line_numbers_color = Ansi.hex('#6e7681')
 background_color = Ansi.hex('#1f1f1f')
 
 def highlight_code(code, language='', line_numbers=True):
+    code = code.strip()
     try:
         lexer = get_lexer_by_name(language)
     except ClassNotFound:

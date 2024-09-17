@@ -4,9 +4,9 @@ clear_screen()
 
 # Columns Layout
 result = columns(3, 3, width - 4, height - 4, sizes=[0.1, 0.3, 0.6], callbacks=[
-    lambda _, *args: border(Chars(style_1), *args, title='Info'),
-    lambda _, *args: border(Chars(style_1), *args, title='Contents'),
-    lambda _, *args: border(Chars(style_1), *args, title='Code'),
+    lambda _, *args: border_panel(Chars(style_1), *args, title='Info'),
+    lambda _, *args: border_panel(Chars(style_1), *args, title='Contents'),
+    lambda _, *args: border_panel(Chars(style_1), *args, title='Code'),
 ])
 result[0].print('Powered by BePrint')
 beprint({

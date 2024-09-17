@@ -5,6 +5,7 @@ Licensed under the Apache License, Version 2.0
 """
 
 from .base import *
+import time
 
 class Panel:
     def __init__(self, left: int = 1, top: int = 1, width: int = width, height: int = height):
@@ -14,7 +15,7 @@ class Panel:
         self.top = self.current_line = top
         self.is_ansi = False
     
-    def print(self, text: str):
+    def print(self, text: str, delay: float = 0):
         for char in text:
             # Ansi escape sequence support
             if char == '\033':
@@ -46,6 +47,8 @@ class Panel:
                     self.current_line += 1
                     self.current_column = self.left
                 write_on(self.current_line, self.current_column, char)
+                if delay > 0:
+                    time.sleep(delay)
                 self.current_column += 1
 
     def clear(self):
