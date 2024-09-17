@@ -5,11 +5,11 @@ Licensed under the Apache License, Version 2.0
 """
 
 from typing import Callable, Sequence, TypeVar
-from .base import width, height
+from .base import terminal_width, terminal_height
 
 T = TypeVar('T')
 
-def columns(left: int = 1, top: int = 1, width: int = width, height: int = height, *, sizes: Sequence[float] | int, callbacks: Sequence[Callable[[int, int, int, int, int], T]]) -> list[T]:
+def columns(left: int = 1, top: int = 1, width: int = terminal_width, height: int = terminal_height, *, sizes: Sequence[float] | int, callbacks: Sequence[Callable[[int, int, int, int, int], T]]) -> list[T]:
     rounded_width = width + 0.5
     if isinstance(sizes, int):
         sizes = [1] * sizes

@@ -27,5 +27,5 @@ beprint({
         'street': object(),
         'zip_code': None
     }
-}, border_panel(Chars(style_1), 1, 1, width, height, 'Object'))
+}, border_panel(Chars(style_1), title='Object'))
 # beprint(locals())

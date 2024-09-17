@@ -10,3 +10,4 @@ build
 debug.py
 tempCodeRunnerFile.*
 .mypy_cache
+dist

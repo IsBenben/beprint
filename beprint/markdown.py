@@ -8,7 +8,7 @@ import mistune
 from .ansi import Ansi
 from .layout.border import border
 from .layout.chars import Chars, style_4
-from .layout.base import width
+from .layout.base import terminal_width
 from .highlight_code import highlight_code
 
 def desc(text: str) -> str:
@@ -123,7 +123,7 @@ class AnsiRenderer(mistune.BaseRenderer):
     def list_item(self, text: str) -> str:
         return text + '\n'
 
-def parse_markdown(md, width=width) -> str:
+def parse_markdown(md, width=terminal_width) -> str:
     renderer = AnsiRenderer(width)
     markdown = mistune.Markdown(renderer=renderer)
     return markdown(md)  # type: ignore

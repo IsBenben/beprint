@@ -118,13 +118,17 @@ if sys.platform == 'win32':
     except:
         ansi_support = False
 
-def ansi_print(text: str, color_code: Ansi = Ansi.reset(), panel: Optional[Panel] = None):
+def ansi_print(text: str, style: Optional[Ansi] = None, panel: Optional[Panel] = None, auto_reset: bool = True):
     if panel:
         _print_func = panel.print
     else:
         _print_func = lambda x: print(x, end='')
 
     if ansi_support:
-        _print_func('{}{}{}'.format(color_code.code, text, Ansi.reset().code))
+        _print_func('{prefix}{text}{suffix}'.format(
+            prefix=style.code if style else '',
+            text=text,
+            suffix=Ansi.reset().code if auto_reset else ''
+        ))
     else:
         _print_func(text)

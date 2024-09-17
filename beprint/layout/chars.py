@@ -4,14 +4,17 @@ Copyright (c) 2024, IsBenben and all contributors
 Licensed under the Apache License, Version 2.0
 """
 
+from ..ansi import Ansi
+
 style_1 = '┌┬┐├┼┤└┴┘|-'
 style_2 = '╓╥╖╟╫╢╙╨╜|-'
 style_3 = '╒╤╕╞╪╡╘╧╛|-'
 style_4 = '+++++++++|-'
 
 class Chars:
-    def __init__(self, chars: str = style_1):
+    def __init__(self, chars: str = style_1, style: Ansi = Ansi.reset()):
         self.chars = chars
+        self.style = style
 
     @staticmethod
     def _at(i):
