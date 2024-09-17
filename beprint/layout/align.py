@@ -33,7 +33,7 @@ def _align(text: str, align: Callable[[list[str]], list[str | None]], width: int
         line_length = -1
         line_words = []
         for word in words:
-            if line_length + len(word) > width:
+            if line_length + len(word) >= width:
                 # Current line is full
                 result.append(_align_line(line_words))
                 line_length = -1

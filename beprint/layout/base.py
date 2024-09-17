@@ -10,7 +10,7 @@ width = os.get_terminal_size().columns
 height = os.get_terminal_size().lines
 
 def write_on(line: int, column: int, text: str):
-    print(f"\033[{line};{column}H{text}", end="")
+    print(f'\033[{line};{column}H{text}', end='', flush=True)
 
 def clear_screen():
-    print("\033[2J", end="")
+    print('\033[2J', end='')

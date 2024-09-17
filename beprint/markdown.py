@@ -7,7 +7,7 @@ Licensed under the Apache License, Version 2.0
 import mistune
 from .ansi import Ansi
 from .layout.border import border
-from .layout.chars import Chars
+from .layout.chars import Chars, style_4
 from .layout.base import width
 from .highlight_code import highlight_code
 

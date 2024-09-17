@@ -9,3 +9,4 @@ beprint.egg-info
 build
 debug.py
 tempCodeRunnerFile.*
+.mypy_cache
