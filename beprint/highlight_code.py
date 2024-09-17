@@ -8,7 +8,7 @@ from pygments import lex
 from pygments.lexers import get_lexer_by_name, guess_lexer
 from pygments.token import Token
 from pygments.util import ClassNotFound
-from .ansi import *
+from .ansi import Ansi
 
 code_colors = {
     Token.Comment.Multiline: Ansi.hex('#6a9955'),

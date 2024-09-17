@@ -4,10 +4,10 @@ Copyright (c) 2024, IsBenben and all contributors
 Licensed under the Apache License, Version 2.0
 """
 
-style_1 = '┌┬┐├┼┤└┴┘'
-style_2 = '╓╥╖╟╫╢╙╨╜'
-style_3 = '╒╤╕╞╪╡╘╧╛'
-style_4 = '+-+|+|+-+'
+style_1 = '┌┬┐├┼┤└┴┘|-'
+style_2 = '╓╥╖╟╫╢╙╨╜|-'
+style_3 = '╒╤╕╞╪╡╘╧╛|-'
+style_4 = '+++++++++|-'
 
 class Chars:
     def __init__(self, chars: str = style_1):
@@ -26,3 +26,5 @@ class Chars:
     left_bottom = lb = bottom_left = bl = _at(6)
     bottom = b = bottom_mid = bm = mid_bottom = mb = _at(7)
     right_bottom = rb = bottom_right = br = _at(8)
+    vertical = v = _at(9)
+    horizontal = h = _at(10)

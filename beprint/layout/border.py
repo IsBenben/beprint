@@ -4,13 +4,12 @@ Copyright (c) 2024, IsBenben and all contributors
 Licensed under the Apache License, Version 2.0
 """
 
-from .panel import *
-from .base import *
-from .chars import *
-from ..ansi import *
+from .panel import Panel
+from .base import width, height
+from .chars import Chars
 
 def border(style: Chars, width: int = width, height: int = height, title: str = '') -> str:
-    title = title.center(width - 2, style.top)
+    title = title.center(width - 2, style.horizontal)
     lines = []
 
     for i in range(1, height + 1):
@@ -30,17 +29,17 @@ def border(style: Chars, width: int = width, height: int = height, title: str = 
                 elif j == width:
                     lla(style.bottom_right)
                 else:
-                    lla(style.bottom)
+                    lla(style.horizontal)
             else:
                 if j == 1:
-                    lla(style.left)
+                    lla(style.vertical)
                 elif j == width:
-                    lla(style.right)
+                    lla(style.vertical)
                 else:
                     lla(' ')
         lines.append(''.join(last_line))
     return '\n'.join(lines)
 
-def border_panel(style: Chars, left: int = 1, top: int = 1, width: int = width, height: int = height, title: str = '', pad: int = 1) -> Panel:
-    Panel(left, top, width, height).print(border(style, left, top, width, height, title))
+def border_panel(style: Chars, left: int = 1, top: int = 1, width: int = width, height: int = height, title: str = '', pad: int = 1, delay: float = 0.01) -> Panel:
+    Panel(left, top, width, height).print(border(style, width, height, title), delay = 0.01)
     return Panel(left + 1 + pad, top + 1 + pad, width - 2 - 2 * pad, height - 2 - 2 * pad)

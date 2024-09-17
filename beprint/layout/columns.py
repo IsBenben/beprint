@@ -5,12 +5,14 @@ Licensed under the Apache License, Version 2.0
 """
 
 from typing import Callable, Sequence, TypeVar
-from .base import *
+from .base import width, height
 
 T = TypeVar('T')
 
-def columns(left: int = 1, top: int = 1, width: int = width, height: int = height, *, sizes: Sequence[float], callbacks: Sequence[Callable[[int, int, int, int, int], T]]) -> list[T]:
+def columns(left: int = 1, top: int = 1, width: int = width, height: int = height, *, sizes: Sequence[float] | int, callbacks: Sequence[Callable[[int, int, int, int, int], T]]) -> list[T]:
     rounded_width = width + 0.5
+    if isinstance(sizes, int):
+        sizes = [1] * sizes
     sum_sizes = sum(sizes)
     ratios = [i / sum_sizes for i in sizes]
     remainder_size = 0

@@ -9,3 +9,10 @@ from .layout import *
 from .beprint import *
 from .highlight_code import *
 from .markdown import *
+from .layout.base import *
+from .layout.border import *
+from .layout.chars import *
+from .layout.columns import *
+from .layout.panel import *
+from .layout.align import *
+from .layout.table import *

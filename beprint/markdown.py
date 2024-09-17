@@ -5,9 +5,11 @@ Licensed under the Apache License, Version 2.0
 """
 
 import mistune
-from .ansi import *
-from .layout.border import *
-from .highlight_code import *
+from .ansi import Ansi
+from .layout.border import border
+from .layout.chars import Chars
+from .layout.base import width
+from .highlight_code import highlight_code
 
 def desc(text: str) -> str:
     return Ansi.string('black').light().style('italic').code + text + Ansi.reset().code

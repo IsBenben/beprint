@@ -4,7 +4,7 @@ Copyright (c) 2024, IsBenben and all contributors
 Licensed under the Apache License, Version 2.0
 """
 
-from .base import *
+from .base import width, height, write_on
 import time
 
 class Panel:
@@ -15,7 +15,7 @@ class Panel:
         self.top = self.current_line = top
         self.is_ansi = False
     
-    def print(self, text: str, delay: float = 0):
+    def print(self, text: str, delay: float = 0.01, clear_delay: float = 3):
         for char in text:
             # Ansi escape sequence support
             if char == '\033':
@@ -47,11 +47,16 @@ class Panel:
                     self.current_line += 1
                     self.current_column = self.left
                 write_on(self.current_line, self.current_column, char)
-                if delay > 0:
+                if delay > 0 and char not in ' \n\r\b\t':
                     time.sleep(delay)
                 self.current_column += 1
+            if self.current_line - self.top >= self.height:
+                time.sleep(clear_delay)
+                self.clear()
 
     def clear(self):
-        self.print(' ' * self.width * self.height)
+        self.current_line = self.top
+        self.current_column = self.left
+        self.print(' ' * self.width * self.height, delay=0)
         self.current_line = self.top
         self.current_column = self.left
