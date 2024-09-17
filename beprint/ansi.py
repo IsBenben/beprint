@@ -106,6 +106,21 @@ class Ansi:
                 result += f'\033[{style_map[style]}m'
         return result
 
+ANSI_RESET = Ansi.reset()
+ANSI_BOLD = Ansi.style('bold')
+ANSI_ITALIC = Ansi.style('italic')
+ANSI_UNDERLINE = Ansi.style('underline')
+ANSI_BLINK = Ansi.style('blink')
+ANSI_INVERSE = Ansi.style('inverse')
+ANSI_BLACK = Ansi.string('black')
+ANSI_RED = Ansi.string('red')
+ANSI_GREEN = Ansi.string('green')
+ANSI_YELLOW = Ansi.string('yellow')
+ANSI_BLUE = Ansi.string('blue')
+ANSI_MAGENTA = Ansi.string('magenta')
+ANSI_CYAN = Ansi.string('cyan')
+ANSI_WHITE = Ansi.string('white')
+
 ansi_support = True
 
 if sys.platform == 'win32':

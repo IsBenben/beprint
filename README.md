@@ -46,7 +46,7 @@ With:
 
 - **Windows** - The package works on Windows.
 - **Python 3.11+** - The package works with Python 3.11 and above.
-- **License** - The package is licensed under the MIT license.
+- **License** - The package is licensed under the Apache 2.0 license.
 - **4 Languages** - The package can print messages in English, Chinese, Japanese, and Korean.
 
 > Test language support here: 你好！Hello! こんにちは! 안녕하세요!
